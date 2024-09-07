@@ -1,0 +1,10 @@
+C:\Users\Busher\source\repos\To Do App\To Do App\bin\Debug\To Do App.exe.config
+C:\Users\Busher\source\repos\To Do App\To Do App\bin\Debug\To Do App.exe
+C:\Users\Busher\source\repos\To Do App\To Do App\bin\Debug\To Do App.pdb
+C:\Users\Busher\source\repos\To Do App\To Do App\obj\Debug\To Do App.csproj.AssemblyReference.cache
+C:\Users\Busher\source\repos\To Do App\To Do App\obj\Debug\To_Do_App.ToDoApp.resources
+C:\Users\Busher\source\repos\To Do App\To Do App\obj\Debug\To_Do_App.Properties.Resources.resources
+C:\Users\Busher\source\repos\To Do App\To Do App\obj\Debug\To Do App.csproj.GenerateResource.cache
+C:\Users\Busher\source\repos\To Do App\To Do App\obj\Debug\To Do App.csproj.CoreCompileInputs.cache
+C:\Users\Busher\source\repos\To Do App\To Do App\obj\Debug\To Do App.exe
+C:\Users\Busher\source\repos\To Do App\To Do App\obj\Debug\To Do App.pdb
