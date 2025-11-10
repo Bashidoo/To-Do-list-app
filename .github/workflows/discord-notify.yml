@@ -14,11 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send message to Discord
-        uses: Ilshidur/action-discord@v2.0.0
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: tsickert/discord-webhook@v6
         with:
-          args: |
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+          content: |
             📢 **Repository:** ${{ github.repository }}
             👤 **Actor:** ${{ github.actor }}
             🧱 **Event:** ${{ github.event_name }}
