@@ -1,0 +1,26 @@
+name: Discord Notifications
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, closed]
+  release:
+    types: [published]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send message to Discord
+        uses: Ilshidur/action-discord@v3
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_USERNAME: "GitHub Bot"
+        with:
+          args: |
+            📢 **Repository:** ${{ github.repository }}
+            👤 **Actor:** ${{ github.actor }}
+            🧱 **Event:** ${{ github.event_name }}
+            🔗 [View on GitHub](${{ github.event.repository.html_url }})
