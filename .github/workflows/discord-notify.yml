@@ -14,11 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send message to Discord
-        uses: tsickert/discord-webhook@v5
-        with:
-          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
-          content: |
-            📢 **Repository:** ${{ github.repository }}
-            👤 **Actor:** ${{ github.actor }}
-            🧱 **Event:** ${{ github.event_name }}
-            🔗 [View on GitHub](${{ github.event.repository.html_url }})
+        run: |
+          PAYLOAD=$(jq -n \
+            --arg content "📢 **Repository:** ${{ github.repository }} \
+            👤 **Actor:** ${{ github.actor }} \
+            🧱 **Event:** ${{ github.event_name }} \
+            🔗 [View on GitHub](${{ github.event.repository.html_url }})" \
+            '{content: $content}')
+          curl -H "Content-Type: application/json" \
+               -d "$PAYLOAD" \
+               "${{ secrets.DISCORD_WEBHOOK }}"
